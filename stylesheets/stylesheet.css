@@ -9,6 +9,27 @@ body {
   line-height: 1.5;
   color: #606c71; }
 
+section {
+  text-align: center;
+}
+
+p {
+  width: 100%;
+  text-align: left;
+}
+
+img {
+  margin: auto;
+}
+
+ul {
+  text-align: left;
+}
+
+h3 {
+  text-align: left;
+}
+
 a {
   color: #1e6bb8;
   text-decoration: none; }
