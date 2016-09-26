@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>
     <section class="page-header">
@@ -29,7 +30,9 @@ If you go sailing with us, please consider contributing a little money on a mont
 Currently, the existence of this boat is contingent on us fundraising an additional $200-$300 monthly.
 We will happily sell out and happily plaster our boat with ads for you.</p>
 
-<p><img src="https://static.hackartscience.com/hackartscience/logo/boat.svg" alt="boat artwork"></p>
+<p><img src="https://static.hackartscience.com/hackartscience/logo/boat.svg" alt="boat artwork">
+  <span id="chart"></span>
+      </p>
 
 <h3>
 <a id="our-little-sailing-club" class="anchor" href="#our-little-sailing-club" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Our little sailing club</h3>
@@ -105,5 +108,37 @@ MIT</p>
     </section>
 
   
+<script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Person', 'Amount given'],
+          ['Still needed', 333],
+          ['Ilia',         100],
+          ['Michelle',     25]
+        ]);
+
+        var options = {
+          pieHole: 0.3,
+          pieSliceText: "value",
+          pieSliceTextStyle: {
+            color: 'black',
+          },
+          legend: 'none',
+          slices: {
+            0: { color: 'transparent',textStyle: {bold: true, color: 'red'} },
+            1: { color: '#EC407A' },
+            2: { color: '#66BB6A' }
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart'));
+        chart.draw(data, options);
+      }
+</script>
+    
+    
   </body>
 </html>
