@@ -154,9 +154,10 @@
 
             var data = google.visualization.arrayToDataTable([
               ['Person', 'Amount given'],
-              ['Still required',  209],
+              ['Still required',  129],
               ['Ilia',            100],
-              ['Michelle',        25]
+              ['Michelle',        25],
+              ['John',            80]
             ]);
 
             var formatter = new google.visualization.NumberFormat(
@@ -176,7 +177,8 @@
               slices: {
                 0: { color: '#FAFAFA',textStyle: {color: 'red'} },
                 1: { color: '#EC407A' },
-                2: { color: '#66BB6A' }
+                2: { color: '#66BB6A' },
+                2: { color: '#9CCC65' }
               }
             };
 
